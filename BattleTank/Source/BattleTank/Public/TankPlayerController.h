@@ -18,6 +18,11 @@ public:
 	ATank* GetControlledTank() const;
 
 	virtual void BeginPlay() override;
+
+	virtual void Tick( float DeltaTime ) override;
 	
-	
+	void AimTowardsCrosshair();
+
+	// return an out paramter, true if hit landscape
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
 };
